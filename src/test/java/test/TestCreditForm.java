@@ -15,9 +15,9 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-class TestFormPayment {
-
+public class TestCreditForm {
     private FormPage formPage;
+
     @BeforeEach
     void setUpPage() {
         formPage = new FormPage();
@@ -29,7 +29,7 @@ class TestFormPayment {
     }
 
     @AfterEach
-    void clearAll() throws SQLException {
+    void clearAll() throws SQLException{
         DBUtils.clearAllData();
     }
 
@@ -37,11 +37,12 @@ class TestFormPayment {
     static void tearDownAll() {
         SelenideLogger.removeListener("allure");
     }
+
     @Test
-    @DisplayName("Обычная оплата по дебетовой карте")
-    void shouldPayByApprovedCard() throws SQLException {
-        formPage.buyForYourMoney();
-        formPage.setCardNumber("1111222233334444");
+    @DisplayName("выдача кредита по данным банковской карты")
+    void shouldPayByApprovedCardInCredit() throws SQLException {
+        formPage.buyOnCredit();
+        formPage.setCardNumber("5555666677778888");
         formPage.setCardMonth("08");
         formPage.setCardYear("24");
         formPage.setCardOwner("Ivan Petrov");

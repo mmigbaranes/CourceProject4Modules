@@ -38,7 +38,7 @@ class TestFormPayment {
         SelenideLogger.removeListener("allure");
     }
     @Test
-    @DisplayName("Обычная оплата по дебетовой карте")
+    @DisplayName("Debit card pay(positive)")
     void shouldPayByApprovedCard() throws SQLException {
         formPage.buyForYourMoney();
         formPage.setCardNumber("1111222233334444");

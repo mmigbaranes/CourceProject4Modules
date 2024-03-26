@@ -39,7 +39,7 @@ public class TestCreditForm {
     }
 
     @Test
-    @DisplayName("выдача кредита по данным банковской карты")
+    @DisplayName("Credit form (positive)")
     void shouldPayByApprovedCardInCredit() throws SQLException {
         formPage.buyOnCredit();
         formPage.setCardNumber("5555666677778888");

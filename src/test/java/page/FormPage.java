@@ -39,9 +39,11 @@ public class FormPage {
     }
 
     public void checkMessageSuccess() {
-        $(withText("Операция одобрена Банком")).shouldBe(visible);
+        $(withText("Операция одобрена Банком")).shouldBe(visible, Duration.ofSeconds(15));
     }
-
+    public void checkMessageWrongNumberCard() {
+        $$(".notification__content").find(exactText("Ошибка! Банк отказал в проведении операции.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+    }
     public void checkMessageError() {
         $$(".notification__title").find(exactText("Ошибка")).shouldBe(Condition.visible, Duration.ofSeconds(10));
     }

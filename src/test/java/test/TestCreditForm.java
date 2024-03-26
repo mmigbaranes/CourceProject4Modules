@@ -50,4 +50,5 @@ public class TestCreditForm {
         formPage.pushСontinueButton();
         formPage.checkMessageSuccess();
     }
+
 }

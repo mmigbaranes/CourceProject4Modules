@@ -12,7 +12,7 @@ __________________
 4. Подготовка отчётных документов по итогам тестирования.
 5. Подготовка отчётных документов по итогам автоматизации.
 
-Этапы задачи выполнены в полном объеме. Качественное выполнение представлено ниже, в файле [Summary](https://github.com/mmigbaranes/CourceProject4Modules/blob/main/Reporting_documentation/Summary.md) , и в отчетах [Allure](https://github.com/mmigbaranes/CourceProject4Modules/blob/main/Reporting_documentation/ALLURE_REPORT_3march2024.jpg).
+Этапы задачи выполнены в полном объеме. Выполнены необходимые и достаточные условия. Качественное выполнение представлено ниже, в файле [Summary](https://github.com/mmigbaranes/CourceProject4Modules/blob/main/Reporting_documentation/Summary.md) , и в отчетах [Allure](https://github.com/mmigbaranes/CourceProject4Modules/blob/main/Reporting_documentation/ALLURE_REPORT_3march2024.jpg).
 
 ## Количество тест-кейсов
 ______________________

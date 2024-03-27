@@ -46,7 +46,7 @@ class TestFormPayment {
         formPage.setCardYear("24");
         formPage.setCardOwner("Ivan Petrov");
         formPage.setCardCVV("999");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageSuccess();
     }
     @Test
@@ -58,7 +58,7 @@ class TestFormPayment {
         formPage.setCardYear("24");
         formPage.setCardOwner("Ivan Petrov");
         formPage.setCardCVV("999");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageWrongNumberCard();
     }
     @Test
@@ -70,7 +70,7 @@ class TestFormPayment {
         formPage.setCardYear("24");
         formPage.setCardOwner("Ivan Petrov");
         formPage.setCardCVV("999");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageWrongDate();
     }
     @Test
@@ -82,7 +82,7 @@ class TestFormPayment {
         formPage.setCardYear("22");
         formPage.setCardOwner("Ivan Petrov");
         formPage.setCardCVV("999");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageOverDate();
     }
     @Test
@@ -94,7 +94,7 @@ class TestFormPayment {
         formPage.setCardYear("24");
         formPage.setCardOwner(" ");
         formPage.setCardCVV("999");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageRequiredField();
     }
 
@@ -107,7 +107,7 @@ class TestFormPayment {
         formPage.setCardYear("24");
         formPage.setCardOwner("Gans Krug");
         formPage.setCardCVV("9");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageWrongFormat();
     }
 
@@ -120,7 +120,7 @@ class TestFormPayment {
         formPage.setCardYear("24");
         formPage.setCardOwner("Ivan Petrov");
         formPage.setCardCVV("969");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageSuccess();
         DBUtils.checkPaymentStatus(Status.APPROVED);
     }
@@ -134,7 +134,7 @@ class TestFormPayment {
         formPage.setCardYear("24");
         formPage.setCardOwner("Ivan Petrov");
         formPage.setCardCVV("969");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageSuccess();
         DBUtils.checkPaymentStatus(Status.DECLINED);
     }

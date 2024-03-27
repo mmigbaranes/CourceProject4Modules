@@ -84,7 +84,7 @@ public class FormPage {
         cvcOrCvvNumber.setValue(cCvv);
     }
 
-    public void pushСontinueButton(){
+    public void pushContinueButton(){
         $$(".button__content").find(exactText("Продолжить")).click();
     }
 

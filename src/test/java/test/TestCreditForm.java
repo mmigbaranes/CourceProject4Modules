@@ -47,7 +47,7 @@ public class TestCreditForm {
         formPage.setCardYear("24");
         formPage.setCardOwner("Ivan Petrov");
         formPage.setCardCVV("999");
-        formPage.pushСontinueButton();
+        formPage.pushContinueButton();
         formPage.checkMessageSuccess();
     }
 

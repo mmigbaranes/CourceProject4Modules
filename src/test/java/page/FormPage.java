@@ -13,11 +13,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class FormPage {
 
-    private static String url = System.getProperty("db.url");
     private static String appURL = System.getProperty("app.url");
     private static String appPORT = System.getProperty("app.port");
-    private static String userDB = System.getProperty("app.userDB");
-    private static String password = System.getProperty("app.password");
 
     List<SelenideElement> input = $$(".input__control");
     SelenideElement cardNumber = input.get(0);

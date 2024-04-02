@@ -1,20 +1,12 @@
 package test;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import data.Status;
 import io.qameta.allure.selenide.AllureSelenide;
 import data.DBUtils;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.Keys;
 import page.FormPage;
 
 import java.sql.SQLException;
-import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 public class TestCreditForm {
     private FormPage formPage;
 

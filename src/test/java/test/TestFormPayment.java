@@ -1,20 +1,11 @@
 package test;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import data.Status;
 import io.qameta.allure.selenide.AllureSelenide;
 import data.DBUtils;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.Keys;
 import page.FormPage;
 
-import java.sql.SQLException;
-import java.time.Duration;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 class TestFormPayment {
 
     private FormPage formPage;
@@ -29,17 +20,16 @@ class TestFormPayment {
     }
 
     @AfterEach
-    void clearAll() throws SQLException {
+    void clearAll(){
         DBUtils.clearAllData();
     }
 
     @AfterAll
-    static void tearDownAll() {
-        SelenideLogger.removeListener("allure");
+    static void tearDownAll() {SelenideLogger.removeListener("allure");
     }
     @Test
     @DisplayName("Debit card pay(positive)")
-    void shouldPayByApprovedCard() throws SQLException {
+    void shouldPayByApprovedCard(){
         formPage.buyForYourMoney();
         formPage.setCardNumber("1111222233334444");
         formPage.setCardMonth("08");
@@ -51,7 +41,7 @@ class TestFormPayment {
     }
     @Test
     @DisplayName("Invalid number debit card")
-    void shouldPayInvalidNumberCard() throws SQLException {
+    void shouldPayInvalidNumberCard(){
         formPage.buyForYourMoney();
         formPage.setCardNumber("1111222233334445");
         formPage.setCardMonth("08");
@@ -63,7 +53,7 @@ class TestFormPayment {
     }
     @Test
     @DisplayName("Invalid month debit card")
-    void shouldPayInvalidMonthDebitCard() throws SQLException {
+    void shouldPayInvalidMonthDebitCard(){
         formPage.buyForYourMoney();
         formPage.setCardNumber("1111222233334444");
         formPage.setCardMonth("13");
@@ -75,7 +65,7 @@ class TestFormPayment {
     }
     @Test
     @DisplayName("Invalid year debit card")
-    void shouldPayInvalidYearDebitCard() throws SQLException {
+    void shouldPayInvalidYearDebitCard(){
         formPage.buyForYourMoney();
         formPage.setCardNumber("1111222233334444");
         formPage.setCardMonth("10");
@@ -87,7 +77,7 @@ class TestFormPayment {
     }
     @Test
     @DisplayName("Invalid Owner field is empty")
-    void shouldPayFieldEmptyDebitCard() throws SQLException {
+    void shouldPayFieldEmptyDebitCard(){
         formPage.buyForYourMoney();
         formPage.setCardNumber("1111222233334444");
         formPage.setCardMonth("10");
@@ -100,7 +90,7 @@ class TestFormPayment {
 
     @Test
     @DisplayName("Invalid CVC or CVV date format")
-    void shouldPayFieldInvalidCvcDebitCard() throws SQLException {
+    void shouldPayFieldInvalidCvcDebitCard(){
         formPage.buyForYourMoney();
         formPage.setCardNumber("1111222233334444");
         formPage.setCardMonth("10");
@@ -113,7 +103,7 @@ class TestFormPayment {
 
     @Test
     @DisplayName("Payment by card, valid data, checking the DB entry")
-    void shouldPayByApprovedCardStatusInDB() throws SQLException {
+    void shouldPayByApprovedCardStatusInDB(){
         formPage.buyForYourMoney();
         formPage.setCardNumber("1111222233334444");
         formPage.setCardMonth("08");
@@ -127,7 +117,7 @@ class TestFormPayment {
 
     @Test
     @DisplayName("Payment by inactive card, valid data, checking the DB entry")
-    void shouldNotPayByDeclinedCardStatusInDB() throws SQLException {
+    void shouldNotPayByDeclinedCardStatusInDB(){
         formPage.buyForYourMoney();
         formPage.setCardNumber("5555666677778888");
         formPage.setCardMonth("08");
@@ -137,5 +127,6 @@ class TestFormPayment {
         formPage.pushContinueButton();
         formPage.checkMessageSuccess();
         DBUtils.checkPaymentStatus(Status.DECLINED);
+
     }
 }

@@ -41,9 +41,6 @@ public class FormPage {
     public void checkMessageWrongNumberCard() {
         $$(".notification__content").find(exactText("Ошибка! Банк отказал в проведении операции.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
-    public void checkMessageError() {
-        $$(".notification__title").find(exactText("Ошибка")).shouldBe(Condition.visible, Duration.ofSeconds(10));
-    }
 
     public void checkMessageWrongFormat() {
         $$(".input__sub").find(exactText("Неверный формат")).shouldBe(visible);

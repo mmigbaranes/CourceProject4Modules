@@ -1,6 +1,6 @@
 ## Краткое описание
 __________________
-В соответстви с [заднием](https://github.com/netology-code/aqa-qamid-diplom) выполнена автоматизация позитивных и 
+В соответстви с [заданием](https://github.com/netology-code/aqa-qamid-diplom) выполнена автоматизация позитивных и 
 негативных сценарии покупки тура в Приложении.
 
 ![Service](https://github.com/mmigbaranes/CourceProject4Modules/blob/main/Reporting_documentation/service.png)
